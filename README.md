@@ -418,7 +418,21 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 🙏 Acknowledgments
+## � Team
+
+### **Core Team**
+- **[Tamma Kundanareddy](https://github.com/kundanareddy2830)** - Lead Architect & Quantum Systems Engineer
+- **[Mohammad Arif](https://github.com/arifmohammad30)** - Full-Stack Developer & UI/UX Lead
+
+### **Contributors**
+- **Durga Pavani** - Backend Development & API Integration
+- **Tamma Pavani** - Frontend Development & Data Visualization
+- **Jaya Vardhan** - Machine Learning & Graph Neural Networks
+- **Lakshman Kumar** - Testing & Quality Assurance
+
+---
+
+## �🙏 Acknowledgments
 
 - **Qiskit Team** for quantum computing framework and extensive documentation
 - **PyTorch Geometric** for graph neural network primitives
@@ -430,7 +444,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📞 Contact & Support
 
-- **Project Lead**: [GitHub Profile](https://github.com/kundanareddy2830)
+- **Project Leads**: 
+  - [Tamma Kundanareddy](https://github.com/kundanareddy2830)
+  - [Mohammad Arif](https://github.com/arifmohammad30)
 - **Issues**: [GitHub Issues](https://github.com/kundanareddy2830/Project-Foresight/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/kundanareddy2830/Project-Foresight/discussions)
 
