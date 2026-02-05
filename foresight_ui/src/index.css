@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-obsidian-900 text-slate-200 font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 10%, rgba(245, 158, 11, 0.03) 0%, transparent 30%);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-obsidian-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-obsidian-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+}
+
+/* Utilities */
+.glass-panel {
+  @apply bg-obsidian-800/50 backdrop-blur-md border border-obsidian-700/50 shadow-xl;
+}
+
+.neon-text-emerald {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.neon-text-crimson {
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
+}
+
+.neon-text-amber {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}

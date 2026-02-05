@@ -1,0 +1,129 @@
+{
+    "primary_key": "nameOrig",
+    "columns": {
+        "step": {
+            "sdtype": "numerical"
+        },
+        "type": {
+            "sdtype": "categorical"
+        },
+        "amount": {
+            "sdtype": "numerical"
+        },
+        "nameOrig": {
+            "sdtype": "id"
+        },
+        "oldbalanceOrg": {
+            "sdtype": "numerical"
+        },
+        "newbalanceOrig": {
+            "sdtype": "numerical"
+        },
+        "nameDest": {
+            "sdtype": "categorical"
+        },
+        "oldbalanceDest": {
+            "sdtype": "numerical"
+        },
+        "newbalanceDest": {
+            "sdtype": "numerical"
+        },
+        "isFraud": {
+            "sdtype": "categorical"
+        },
+        "isFlaggedFraud": {
+            "sdtype": "categorical"
+        },
+        "nameOrig_outDegree": {
+            "sdtype": "categorical"
+        },
+        "nameDest_inDegree": {
+            "sdtype": "categorical"
+        },
+        "HourOfDay": {
+            "sdtype": "numerical"
+        },
+        "DayOfWeek": {
+            "sdtype": "categorical"
+        },
+        "type_CASH_IN": {
+            "sdtype": "categorical"
+        },
+        "type_CASH_OUT": {
+            "sdtype": "categorical"
+        },
+        "type_DEBIT": {
+            "sdtype": "categorical"
+        },
+        "type_PAYMENT": {
+            "sdtype": "categorical"
+        },
+        "type_TRANSFER": {
+            "sdtype": "categorical"
+        },
+        "account_age_steps": {
+            "sdtype": "categorical"
+        },
+        "txn_amount_vs_historical_avg": {
+            "sdtype": "numerical"
+        },
+        "orig_community_id": {
+            "sdtype": "id"
+        },
+        "dest_community_id": {
+            "sdtype": "id"
+        },
+        "is_cross_community_txn": {
+            "sdtype": "categorical"
+        },
+        "payee_past_fraud_ratio": {
+            "sdtype": "numerical"
+        },
+        "is_single_path_transfer": {
+            "sdtype": "categorical"
+        },
+        "isComplexFraud": {
+            "sdtype": "categorical"
+        },
+        "avg_txn_amount_last_5": {
+            "sdtype": "categorical"
+        },
+        "txn_count_orig": {
+            "sdtype": "categorical"
+        },
+        "is_night_txn": {
+            "sdtype": "categorical"
+        },
+        "is_weekend": {
+            "sdtype": "categorical"
+        },
+        "orig_balance_change": {
+            "sdtype": "numerical"
+        },
+        "dest_balance_change": {
+            "sdtype": "numerical"
+        },
+        "txn_vs_orig_balance": {
+            "sdtype": "numerical"
+        },
+        "txn_vs_dest_balance": {
+            "sdtype": "numerical"
+        },
+        "degree_ratio": {
+            "sdtype": "numerical"
+        },
+        "is_cross_community_txn_num": {
+            "sdtype": "categorical"
+        },
+        "is_single_path_transfer_num": {
+            "sdtype": "categorical"
+        },
+        "transaction_type": {
+            "sdtype": "categorical"
+        },
+        "fraud_type": {
+            "sdtype": "categorical"
+        }
+    },
+    "METADATA_SPEC_VERSION": "SINGLE_TABLE_V1"
+}

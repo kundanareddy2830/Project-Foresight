@@ -1,0 +1,56 @@
+This is the Business & Technical Defense section of your presentation. This is how you answer the "Shark Tank" questions from the judges.
+1. How is this a Product for Banking?
+"Project Janus is not just a model; it is a Plug-and-Play Security Layer."
+Currently, banks use "Rules Engines" (If amount > $10k, flag it). This is old and rigid.
+The Product: Janus acts as an API Microservice that sits behind the bank's mobile app.
+The Workflow:
+User clicks "Send Money."
+Bank App sends transaction details to Janus API.
+Janus returns a Risk Score (Safe/Critical) in milliseconds.
+If Critical, the bank blocks the transfer or asks for FaceID.
+2. How does it work instantly? (The Latency Defense)
+Judge: "Quantum is slow. How do you do this in the 200ms transaction window?"
+You: "We use an Asynchronous Architecture."
+The "Heavy Lifting" is Pre-Computed: The GNN updates the Graph Embeddings continuously in the background (Async). These mathematical "fingerprints" are stored in a super-fast cache (Redis Feature Store).
+The "Live Check" is Fast: When the transaction happens, we don't retrain the model. We just:
+Fetch the pre-computed vectors.
+Run the QSVC (which is just fast linear algebra on a simulator).
+Result: A decision in < 50ms.
+The VQE is Selective: We don't run the heavy VQE on every coffee purchase. We only trigger the deep VQE analysis if the initial QSVC score is suspicious (>50%). This optimizes speed vs. security.
+3. Is VQE Slow? How do we tackle that?
+Judge: "VQE requires thousands of 'shots' to converge. Isn't that too slow?"
+You: "Yes, on current physical hardware, it is slow. We tackle this in two ways:"
+Simulation for Speed: For this product stage, we run VQE on High-Performance Simulators (Qiskit Aer). Since we are looking at specific sub-graphs (2-4 qubits), the simulation is instant.
+The "Hybrid Trigger": We use the VQE as a Second Opinion.
+Level 1 (XGBoost/QSVC): Screens 100% of traffic. (Fast).
+Level 2 (VQE): Only screens the top 1% of "Grey Area" cases where the bank would normally call the customer manually. VQE is still faster than a human analyst.
+4. How does it work for a "New User"? (The Cold Start)
+Judge: "I just opened an account. I have no history. Does Janus work for me?"
+You: "Yes, because Janus looks at Neighbors, not just History."
+Classical AI (XGBoost): Fails. It sees "History = Null" and guesses.
+Project Janus (GNN + Quantum):
+Even if You are new, the person you are paying is not.
+If a new account immediately sends money to a known "High-Risk Node" (a Mule), the GNN sees that link instantly.
+The Physics: Adding a new node that connects directly to a "Bad" node creates High Energy Frustration in the VQE Hamiltonian. The system flags you immediately based on who you know, not who you are.
+5. The Ultimate Question: "Why Quantum? XGBoost is fine!"
+Judge: "XGBoost works for 99% of banks. Why do we need this complexity?"
+You: "XGBoost is great at Statistics, but it is blind to Topology."
+"We built Janus not to replace XGBoost, but to catch the specific, sophisticated rings that XGBoost mathematically cannot see."
+6. Realities & Future
+The Reality Today: We are running on Simulators. It is a "Quantum-Inspired" solution running on classical GPUs. It is production-ready now as a software solution.
+The Future (3-5 Years): As Quantum Hardware (QPUs) hits 100+ stable qubits, we can replace the Simulator with a real QPU. This will allow us to analyze massive fraud rings (100+ people) that are impossible to simulate classically. We are "Quantum-Ready."
+Feature
+XGBoost (Classical)
+Project Janus (Quantum)
+Data View
+Rows & Columns (Spreadsheet).
+Nodes & Edges (The Web).
+Blind Spot
+"The Hidden Ring." If a fraudster uses normal amounts ($500) and normal times, XGBoost sees nothing wrong. (See Row 1 & 2 in my logs).
+Topology. Janus sees that this "Normal" $500 is part of a 5-person circular chain.
+Detection Logic
+"Is this amount weird?"
+"Does this relationship break the stability of the network?"
+The Result
+Catches Credit Card Theft.
+Catches Money Laundering & Mule Rings.

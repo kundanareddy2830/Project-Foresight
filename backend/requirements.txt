@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+websockets
+pydantic
+numpy
+pandas
+torch
+torch-geometric
+qiskit>=1.0.0
+qiskit-aer
+qiskit-algorithms
+scikit-learn
+xgboost
+joblib
+networkx
+python-multipart
+starlette
