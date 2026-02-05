@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔮 Project Foresight
+# Project Foresight
 
 ### **Hybrid Quantum-Topological Fraud Detection Platform**
 
@@ -16,7 +16,7 @@
 
 ---
 
-## 🎯 Executive Summary
+## Executive Summary
 
 **Project Foresight** is an enterprise-grade fraud detection system that fundamentally reimagines financial security by treating fraud as a **physical energy state** rather than a statistical pattern. By combining **Graph Neural Networks (GAT)**, **Quantum Support Vector Classifiers (QSVC)**, and **Variational Quantum Eigensolver (VQE)**, Foresight detects sophisticated fraud rings that evade traditional machine learning systems.
 
@@ -28,27 +28,27 @@ Project Foresight operates in **topological-quantum space**, analyzing the **str
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🧠 **Hybrid Quantum-Classical Architecture**
+### **Hybrid Quantum-Classical Architecture**
 - **Graph Attention Network (GAT)**: Encodes 2-hop neighborhood topology into 16D latent embeddings
 - **Quantum Support Vector Classifier (QSVC)**: High-dimensional classification via ZZ-Feature Map in Hilbert Space
 - **Hamiltonian Ground State Anomaly Detection (H-GSAD)**: VQE-based energy forecasting for structural stability analysis
 - **XGBoost Benchmark**: Classical baseline for performance comparison
 
-### 🎨 **Enterprise UI Dashboard**
+### **Enterprise UI Dashboard**
 - **Real-time Risk Stream**: WebSocket-powered live transaction monitoring with quantum analysis
 - **3D Network Visualization**: Interactive force-graph rendering of transaction topologies
 - **Investigation Portal**: Deep-dive forensics with quantum state probabilities and energy landscapes
 - **Compliance Audit Log**: Immutable record of all blocked transactions with regulatory metadata
 
-### 🔬 **Advanced Capabilities**
+### **Advanced Capabilities**
 - **Zero-Day Fraud Detection**: Identifies novel attack patterns never seen in training data
 - **Perturbation Vector Analysis**: Measures how transactions warp the structural fingerprint of the network
 - **Energy State Classification**: 4-state quantum model (Ground/Biased/Noise/High Energy)
 - **Account-Level Blocking**: Persistent blacklisting across simulation sessions
 
-### 📊 **Analytics & Insights**
+### **Analytics & Insights**
 - Transaction volume and fraud metrics aggregation
 - Prevention rate calculation with blocked account tracking
 - Quantum vs. Classical benchmark comparison visualizations
@@ -56,7 +56,7 @@ Project Foresight operates in **topological-quantum space**, analyzing the **str
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```mermaid
 graph LR
@@ -102,7 +102,7 @@ graph LR
 
 ---
 
-## 🚀 Technology Stack
+## Technology Stack
 
 ### **Backend**
 | Component | Technology | Purpose |
@@ -132,7 +132,7 @@ graph LR
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### **Prerequisites**
 - Python 3.10 or higher
@@ -187,7 +187,7 @@ npm run dev
 
 ---
 
-## 🎮 Usage Guide
+## Usage Guide
 
 ### **Real-Time Monitoring**
 1. Navigate to the **Dashboard** (Home)
@@ -217,7 +217,7 @@ npm run dev
 
 ---
 
-## 🔌 API Reference
+## API Reference
 
 ### **Core Endpoints**
 
@@ -322,7 +322,7 @@ Audit log of all blocked transactions.
 
 ---
 
-## 🧪 Scientific Foundation
+## Scientific Foundation
 
 ### **Novel Contributions**
 1. **Perturbation Vector Bridge**: First application of graph embedding deviations to quantum feature maps
@@ -339,7 +339,7 @@ Audit log of all blocked transactions.
 
 ---
 
-## 🎯 Benchmark Performance
+## Benchmark Performance
 
 | Metric | Classical (XGBoost) | Quantum Hybrid (Foresight) |
 |--------|---------------------|----------------------------|
@@ -353,7 +353,7 @@ Audit log of all blocked transactions.
 
 ---
 
-## 🛡️ Security & Compliance
+## Security & Compliance
 
 - **Immutable Audit Logs**: All blocking actions recorded with timestamp, user, and rationale
 - **Account-Level Enforcement**: Persistent blacklisting across system restarts
@@ -362,7 +362,7 @@ Audit log of all blocked transactions.
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 ### **Phase 1: Core Platform** ✅
 - [x] Hybrid quantum-classical engine
@@ -392,7 +392,7 @@ Audit log of all blocked transactions.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions from the quantum computing and financial security communities!
 
@@ -412,27 +412,24 @@ We welcome contributions from the quantum computing and financial security commu
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## � Team
+## Contributors
 
-### **Core Team**
-- **[Tamma Kundanareddy](https://github.com/kundanareddy2830)** - Lead Architect & Quantum Systems Engineer
-- **[Mohammad Arif](https://github.com/arifmohammad30)** - Full-Stack Developer & UI/UX Lead
-
-### **Contributors**
-- **Durga Pavani** - Backend Development & API Integration
-- **Tamma Pavani** - Frontend Development & Data Visualization
-- **Jaya Vardhan** - Machine Learning & Graph Neural Networks
-- **Lakshman Kumar** - Testing & Quality Assurance
+- [Tamma Kundanareddy](https://github.com/kundanareddy2830)
+- [Mohammad Arif](https://github.com/arifmohammad30)
+- Durga Pavani
+- Tamma Pavani
+- Jaya Vardhan
+- Lakshman Kumar
 
 ---
 
-## �🙏 Acknowledgments
+## Acknowledgments
 
 - **Qiskit Team** for quantum computing framework and extensive documentation
 - **PyTorch Geometric** for graph neural network primitives
@@ -442,11 +439,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 📞 Contact & Support
+## Contact & Support
 
-- **Project Leads**: 
-  - [Tamma Kundanareddy](https://github.com/kundanareddy2830)
-  - [Mohammad Arif](https://github.com/arifmohammad30)
+- **Project Repository**: [Project Foresight](https://github.com/kundanareddy2830/Project-Foresight)
 - **Issues**: [GitHub Issues](https://github.com/kundanareddy2830/Project-Foresight/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/kundanareddy2830/Project-Foresight/discussions)
 
