@@ -161,6 +161,66 @@ class JanusEngine:
         # Normalize
         return {k: round(v/total, 4) for k, v in final_probs.items()}
 
+    def _get_transaction_topology(self, idx):
+        """
+        Generates unique topology data for each transaction using REAL network metrics.
+        """
+        row = self.details.iloc[idx]
+        
+        # 1. Real Network Metrics from dataset
+        out_degree = int(row['nameOrig_outDegree'])  # How many accounts this sender transacts with
+        in_degree = int(row['nameDest_inDegree'])    # How many accounts send to this receiver
+        
+        # DEBUG: Print once to verify
+        if idx % 50 == 0:
+            print(f"   📊 DEBUG TX-{10000+idx}: out_degree={out_degree}, in_degree={in_degree}")
+        
+        # 2. Classify Topology Pattern based on REAL degrees
+        # Adjusted thresholds based on actual data distribution:
+        # Most fraud: out_degree=1-2, in_degree=1-4
+        # High connectivity fraud is rare (only ~1 transaction with in_degree=10)
+        
+        if out_degree >= 8 or in_degree >= 8:
+            pattern = "Star-Hub (Mule)"
+            pattern_type = "high_connectivity"
+        elif out_degree >= 4 or in_degree >= 4:
+            pattern = "Fan-Out (Distribution)"
+            pattern_type = "medium_connectivity"
+        elif out_degree == 1 and in_degree == 1:
+            pattern = "Linear (P2P)"
+            pattern_type = "low_connectivity"
+        else:
+            # out_degree=2-3 or in_degree=2-3
+            pattern = "Small Network"
+            pattern_type = "normal"
+        
+        # 3. Generate neighbor nodes using actual degree
+        neighbor_count = min(max(out_degree, in_degree), 8)  # Cap at 8 for visualization
+        
+        # 4. Create realistic neighbor nodes (deterministic per transaction)
+        neighbors = []
+        for i in range(neighbor_count):
+            # Use transaction hash + index for deterministic but unique IDs
+            seed = hash(str(row['nameOrig']) + str(idx) + str(i)) % 10000
+            
+            neighbors.append({
+                "id": f"{str(row['nameOrig'])[:4]}...{seed:04d}",
+                "relationship": "Mule" if pattern_type == "high_connectivity" else "Peer",
+                "risk": 0.85 if pattern_type == "high_connectivity" else 0.15,
+                "degree": out_degree if i < out_degree else in_degree
+            })
+        
+        return {
+            "pattern": pattern,
+            "neighbor_count": neighbor_count,
+            "nodes": neighbors,
+            "metrics": {
+                "source_degree": out_degree,
+                "dest_degree": in_degree,
+                "connectivity_score": (out_degree + in_degree) / 2.0
+            }
+        }
+
     def get_classical_benchmark(self, is_fraud, idx):
         """
         Simulates the 'Blindspot' of Classical AI (XGBoost).
@@ -230,17 +290,10 @@ class JanusEngine:
             {"term": "ZZ", "coeff": float(coeffs[2]), "desc": "Entanglement Cost"}
         ]
         
-        # Neighbors (Mock Topology)
-        neighbor_count = 5 if is_fraud else 2
-        neighbors = [{"id": f"N{i}-{np.random.randint(1000,9999)}", "relationship": "Mule" if is_fraud else "Peer", "risk": 0.9 if is_fraud else 0.1} for i in range(neighbor_count)]
-
         return {
             "transaction": tx_data,
-            "topology": {
-                "pattern": "Star-Hub (Mule)" if is_fraud else "Linear (P2P)",
-                "neighbor_count": neighbor_count,
-                "nodes": neighbors
-            },
+            "topology": self._get_transaction_topology(idx),
+
             "qsvc": {
                 "probability": qsvc_prob,
                 "vector_magnitude": float(np.linalg.norm(vector)),

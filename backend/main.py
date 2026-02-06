@@ -74,8 +74,10 @@ async def websocket_endpoint(websocket: WebSocket):
                 print(f"   💵 AMOUNT: {tx_data['amount']} | ACCOUNT: {tx_data['account']}")
                 print(f"   🔮 JANUS (H-GSAD): {vqe_result['status']} (Energy: {vqe_result['energy']:.2f} eV)")
                 
+                # Show actual topology pattern from the engine
+                topology = full_analysis["topology"]
                 if benchmark['blindspot_detected']:
-                     print(f"   ⚠️  MULE RING DETECTED: High-Sophistication Star Topology Detected")
+                     print(f"   ⚠️  MULE RING DETECTED: {topology['pattern']} ({topology['neighbor_count']} nodes)")
                 
                 print("────────────────────────────────────────────────────────\n")
 
